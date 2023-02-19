@@ -10,8 +10,8 @@
 </head>
 <body>
     <div id="cont">
-        <h1 style="font-size:50px;margin-bottom:10px;">Tirage</h1>
-        <h5 style="display: block; margin-bottom:30px;">Choose 7 numbers</h5>
+        <h1 style="font-size:50px;margin-bottom:0px;">Lottery</h1>
+        <h5 style="display: block; margin-bottom:34px;margin-top:5px;">Choose 7 numbers</h5>
         <?php for($i=1;$i<=49;$i++){ ?>
             <div class="num"><?=$i?></div>
         <?php } ?>
