@@ -1,3 +1,12 @@
+<?php
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $selectedNumbers = array_filter($_POST["selectedNumbers"]);
+    $results = array();
+    for ($i = 0; $i <= 6; $i++ ){
+        $results[] = rand(1,49);
+    }
+}?>
+    
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,22 +18,20 @@
     <title>Lottery</title>
 </head>
 <body>
-<?php
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $selectedNumbers = array_filter($_POST["selectedNumbers"]);
-    }
-?>
     <div id="container">
         <h1 style="font-size:50px;">Drawing</h1>
+        
         <h3 style="margin-top: 70px;">Numbers played:</h3>
         <?php foreach($selectedNumbers as $num){ ?>
             <div class="num"><?=$num?></div>
         <?php } ?>
+
         <h3 style="margin-top: 70px;">Draw result:</h3>
-        <?php foreach($selectedNumbers as $num){ ?>
-            <div class="num"><?=$num?></div>
+        <?php foreach($results as $result){ ?>
+            <div class="num"><?=$result?></div>
         <?php } ?>
-        <h1 style="margin-top: 50px;">Nice try, you got x correct number</h1>
+
+        <h1 style="margin-top: 50px;">Nice try, you got x correct numbers</h1>
         <a href="index.php"><button><span>Try again</span></button></a>
     </div>
 </body>
