@@ -21,7 +21,7 @@ body{
     box-shadow: 0 15px 25px rgba(0,0,0,.5);
     border-radius: 10px;
 }
-.num{
+.num,.result{
     border: solid 1px #303134;
     background-color: #28292c;
     border-radius: 4px;
@@ -35,7 +35,7 @@ body{
     margin: 2px;
     transition: font-size 1s;
 }
-.num:hover {
+.num:hover, .result:hover {
     border: 1px solid #5f6368;
     cursor: pointer;
 }
@@ -94,4 +94,8 @@ button::before {
 }
 button:hover::before {
     transform: translate3d(100%, 0, 0);
+}
+
+#final{
+    opacity: 0;
 }

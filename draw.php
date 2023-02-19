@@ -21,6 +21,7 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="script.js" defer></script>
     <title>Lottery</title>
+    
 </head>
 <body>
     <div id="container">
@@ -33,10 +34,11 @@
 
         <h3 style="margin-top: 70px;">Draw result:</h3>
         <?php foreach($results as $result){ ?>
-            <div class="num"><?=$result?></div>
+            <div class="result result-animation" onclick="animateNumber(<?=$result?>)" >-</div>
         <?php } ?>
-
-        <h1 style="margin-top: 50px;"><span style="color:#8c6db6;">Nice try</span>, you got <span style="color:#8c6db6;"><?=$pts?></span> correct numbers!</h1>
+        
+        <div id="final"><h1 style="margin-top: 50px;"><span style="color:#8c6db6;">Nice try</span>, you got <span style="color:#8c6db6;"><?=$pts?></span> correct numbers!</h1></div>
+    
         <a href="index.php"><button><span>Try again</span></button></a>
     </div>
 </body>
