@@ -32,14 +32,13 @@ body{
     justify-content: center;
     align-items: center;
     font-size: 18px;
-    font-family: Arial, Helvetica, sans-serif;
     margin: 2px;
     
 }
-.num:hover{
+.num:hover {
     border: 1px solid #5f6368;
     cursor: pointer;
 }
-.num.selected{
+.selected {
     background-color: #CF9FFF;
 }
