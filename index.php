@@ -17,7 +17,7 @@
                 <div class="num"><?=$i?></div>
                 <input type="hidden" name="selectedNumbers[]" value="">
             <?php } ?>
-            <button type="submit"><span>Draw</span></button>
+            <button type="submit" disabled><span>Draw</span></button>
         </form>
     </div>
 </body>
