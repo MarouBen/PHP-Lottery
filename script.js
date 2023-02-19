@@ -22,22 +22,33 @@ for (var i = 0; i < listnum.length; i++){
 }
 
 // draw page
+function animateNumbers() {
+    const divs = document.querySelectorAll('.result-animation');
+    let index = 0;
+    animateNumber(divs[index].textContent);
+}
+
 function animateNumber(result) {
-    const div = document.querySelector(".result-animation:not(.animated)");
+    const div = divs[index];
     div.classList.add("animated");
     let i = 1;
     const intervalId = setInterval(() => {
       if (i >= result) {
         clearInterval(intervalId);
         div.textContent = result;
-        div.onclick = null;
-        checkAllClicked()
+        index++;
+        if (resultIndex < divs.length) {
+            setTimeout(() => animateNumber(divs[resultIndex].textContent), 500); 
+          } else {
+            checkAllClicked();
+          }
         return;
       }
       div.textContent = i;
       i += 1;
     }, 20);
   }
+
 
 function checkAllClicked() {
     const numDivs = document.querySelectorAll('.result-animation');
@@ -47,4 +58,5 @@ function checkAllClicked() {
         final.style.opacity = 1;
     }
 }
-
+checkAllClicked()
+animateNumbers()

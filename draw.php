@@ -34,7 +34,7 @@
 
         <h3 style="margin-top: 70px;">Draw result:</h3>
         <?php foreach($results as $result){ ?>
-            <div class="result result-animation" onclick="animateNumber(<?=$result?>)" >-</div>
+            <div class="result result-animation"><?=$result?></div>
         <?php } ?>
         
         <div id="final"><h1 style="margin-top: 50px;"><span style="color:#8c6db6;">Nice try</span>, you got <span style="color:#8c6db6;"><?=$pts?></span> correct numbers!</h1></div>
