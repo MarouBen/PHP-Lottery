@@ -15,6 +15,7 @@
         <?php for($i=1;$i<=49;$i++){ ?>
             <div class="num"><?=$i?></div>
         <?php } ?>
+        <button><span>Confirm</span></button>
     </div>
 </body>
 </html>
