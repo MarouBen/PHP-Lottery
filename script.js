@@ -1,6 +1,7 @@
 var selectedCount = 0;
 var listnum = document.querySelectorAll("#cont .num");
 var btn = document.querySelector("button[type=submit]")
+btn.disabled = true;
 
 for (var i = 0; i < listnum.length; i++){
     listnum[i].addEventListener("click",function(){
