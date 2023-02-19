@@ -6,7 +6,7 @@ for (var i = 0; i < listnum.length; i++){
     listnum[i].addEventListener("click",function(){
         if (selectedCount < 7 || this.classList.contains("selected")){
             this.classList.toggle("selected");
-            var value = this.dataset.value;
+            var value = this.textContent;
             var input = this.nextElementSibling;
             input.value = this.classList.contains("selected")? value : "";
             selectedCount +=  this.classList.contains("selected")? 1 : -1;

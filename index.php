@@ -12,7 +12,7 @@
     <div id="cont">
         <h1 style="font-size:50px;margin-bottom:0px;">Lottery</h1>
         <h5 style="display: block; margin-bottom:34px;margin-top:5px;">Choose 7 numbers to start</h5>
-        <form method="post" action="draw.php">
+        <form method="POST" action="draw.php">
             <?php for($i=1;$i<=49;$i++){ ?>
                 <div class="num"><?=$i?></div>
                 <input type="hidden" name="selectedNumbers[]" value="">

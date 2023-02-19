@@ -8,7 +8,7 @@ body{
     background-color:#202124;
 }
 
-#cont{
+#cont,#container{
     text-align: center;
     align-items: center;
     justify-content: center;
