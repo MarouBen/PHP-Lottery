@@ -5,7 +5,12 @@
     for ($i = 0; $i <= 6; $i++ ){
         $results[] = rand(1,49);
     }
-}?>
+    $pts = 0;
+    $matched = array_intersect($selectedNumbers, $results);
+    foreach ($selectedNumbers as $num) {
+        $pts += in_array($num, $matched) ? 1 : 0;
+    }}
+?>
     
 <!DOCTYPE html>
 <html lang="en">
@@ -20,7 +25,7 @@
 <body>
     <div id="container">
         <h1 style="font-size:50px;">Drawing</h1>
-        
+
         <h3 style="margin-top: 70px;">Numbers played:</h3>
         <?php foreach($selectedNumbers as $num){ ?>
             <div class="num"><?=$num?></div>
@@ -31,7 +36,7 @@
             <div class="num"><?=$result?></div>
         <?php } ?>
 
-        <h1 style="margin-top: 50px;">Nice try, you got x correct numbers</h1>
+        <h1 style="margin-top: 50px;"><span style="color:#8c6db6;">Nice try</span>, you got <span style="color:#8c6db6;"><?=$pts?></span> correct numbers!</h1>
         <a href="index.php"><button><span>Try again</span></button></a>
     </div>
 </body>

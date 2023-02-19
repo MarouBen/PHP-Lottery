@@ -33,7 +33,7 @@ body{
     align-items: center;
     font-size: 18px;
     margin: 2px;
-    
+    transition: font-size 1s;
 }
 .num:hover {
     border: 1px solid #5f6368;

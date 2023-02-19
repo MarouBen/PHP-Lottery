@@ -1,3 +1,4 @@
+// index page
 var selectedCount = 0;
 var listnum = document.querySelectorAll("#cont .num");
 var btn = document.querySelector("button[type=submit]")
@@ -19,3 +20,5 @@ for (var i = 0; i < listnum.length; i++){
         }
     });
 }
+
+// draw page
