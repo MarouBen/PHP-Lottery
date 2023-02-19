@@ -1,7 +1,10 @@
+var selectedCount = 0;
 var listnum = document.querySelectorAll("#cont .num");
-alert("hello")
 for (var i = 0; i < listnum.length; i++){
     listnum[i].addEventListener("click",function(){
-        this.classList.toggle("selected");
+        if (selectedCount < 7 || this.classList.contains("selected")){
+            this.classList.toggle("selected");
+            selectedCount +=  this.classList.contains("selected")? 1 : -1;
+        }
     });
 }
