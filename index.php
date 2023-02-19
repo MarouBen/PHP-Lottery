@@ -11,11 +11,14 @@
 <body>
     <div id="cont">
         <h1 style="font-size:50px;margin-bottom:0px;">Lottery</h1>
-        <h5 style="display: block; margin-bottom:34px;margin-top:5px;">Choose 7 numbers</h5>
-        <?php for($i=1;$i<=49;$i++){ ?>
-            <div class="num"><?=$i?></div>
-        <?php } ?>
-        <button><span>Confirm</span></button>
+        <h5 style="display: block; margin-bottom:34px;margin-top:5px;">Choose 7 numbers to start</h5>
+        <form method="post">
+            <?php for($i=1;$i<=49;$i++){ ?>
+                <div class="num"><?=$i?></div>
+                <input type="hidden" name="selectedNumbers[]" value="">
+            <?php } ?>
+            <button type="submit"><span>Draw</span></button>
+        </form>
     </div>
 </body>
 </html>
