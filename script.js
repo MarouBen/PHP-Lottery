@@ -36,55 +36,21 @@ function animateResult() {
     currentNum++;
     if (currentNum > finalNum) {
       clearInterval(intervalId);
-      currentResult.classList.remove("result-animation");
+      currentResult.classList.add("animated");
       currentResultIndex++;
       if (currentResultIndex < results.length) {
         animateResult();
       }
     }
-  }, 500); // Change this value to adjust the animation speed
+  }, 100); 
 }
-
 animateResult();
 
-
-
-
-
-
-
-// function animateNumbers() {
-//   const divs = document.querySelectorAll('.result-animation');
-//   for(let i = 0; i < divs.length; i++){
-    
-//     setTimeout(()=>animateNumber(divs[i]),i * 500 );
-//   }
-//   setTimeout(checkAllAnimated, 600 * divs.length);
-// }
-
-// function animateNumber(current) {
-//   const div = current;
-//   const result = parseInt(div.getAttribute("data-value"));
-//   div.classList.add("animated");
-//   let i = 1;
-//   const intervalId = setInterval(() => {
-//     if (i >= result) {
-//       checkAllAnimated;
-//       clearInterval(intervalId);
-//     }
-//     div.textContent = i;
-//     i += 1;
-//   }, 90);
-  
-// }
-
-// function checkAllAnimated() {
-//   const numDivs = document.querySelectorAll('.result-animation');
-//   const final = document.querySelector("#final");
-//   const allClicked = Array.from(numDivs).every((div) => div.classList.contains('animated'));
-//   if (allClicked) {
-//       final.style.opacity = 1;
-//   }
-// }
-
-// window.addEventListener('load', animateNumbers);
+function checkAllAnimated() {
+  const numDivs = document.querySelectorAll('.result-animation');
+  const final = document.querySelector("#final");
+  const allClicked = Array.from(numDivs).every((div) => div.classList.contains('animated'));
+  if (allClicked) {
+      final.style.opacity = 1;
+  }
+}
