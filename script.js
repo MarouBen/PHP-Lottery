@@ -23,40 +23,37 @@ for (var i = 0; i < listnum.length; i++){
 
 // draw page
 function animateNumbers() {
-    const divs = document.querySelectorAll('.result-animation');
-    let index = 0;
-    animateNumber(divs[index].textContent);
-}
-
-function animateNumber(result) {
-    const div = divs[index];
-    div.classList.add("animated");
-    let i = 1;
-    const intervalId = setInterval(() => {
-      if (i >= result) {
-        clearInterval(intervalId);
-        div.textContent = result;
-        index++;
-        if (resultIndex < divs.length) {
-            setTimeout(() => animateNumber(divs[resultIndex].textContent), 500); 
-          } else {
-            checkAllClicked();
-          }
-        return;
-      }
-      div.textContent = i;
-      i += 1;
-    }, 20);
+  const divs = document.querySelectorAll('.result-animation');
+  for(let i = 0; i < divs.length; i++){
+    
+    setTimeout(()=>animateNumber(divs[i]),i * 500 );
   }
-
-
-function checkAllClicked() {
-    const numDivs = document.querySelectorAll('.result-animation');
-    const final = document.querySelector("#final");
-    const allClicked = Array.from(numDivs).every((div) => div.classList.contains('animated'));
-    if (allClicked) {
-        final.style.opacity = 1;
-    }
+  setTimeout(checkAllAnimated, 600 * divs.length);
 }
-checkAllClicked()
-animateNumbers()
+
+function animateNumber(current) {
+  const div = current;
+  const result = parseInt(div.getAttribute("data-value"));
+  div.classList.add("animated");
+  let i = 1;
+  const intervalId = setInterval(() => {
+    if (i >= result) {
+      checkAllAnimated;
+      clearInterval(intervalId);
+    }
+    div.textContent = i;
+    i += 1;
+  }, 90);
+  
+}
+
+function checkAllAnimated() {
+  const numDivs = document.querySelectorAll('.result-animation');
+  const final = document.querySelector("#final");
+  const allClicked = Array.from(numDivs).every((div) => div.classList.contains('animated'));
+  if (allClicked) {
+      final.style.opacity = 1;
+  }
+}
+
+window.addEventListener('load', animateNumbers);

@@ -2,9 +2,11 @@
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $selectedNumbers = array_filter($_POST["selectedNumbers"]);
     $results = array();
-    for ($i = 0; $i <= 6; $i++ ){
-        $results[] = rand(1,49);
-    }
+    while (count($results) < 7) {
+        $num = rand(1,49);
+        if (!in_array($num,$results)){
+            $results[] = $num;
+        }}
     $pts = 0;
     $matched = array_intersect($selectedNumbers, $results);
     foreach ($selectedNumbers as $num) {
@@ -19,7 +21,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="style.css">
-    <script src="script.js" defer></script>
+    <script src="script.js" defer> </script>
     <title>Lottery</title>
     
 </head>
@@ -34,7 +36,7 @@
 
         <h3 style="margin-top: 70px;">Draw result:</h3>
         <?php foreach($results as $result){ ?>
-            <div class="result result-animation"><?=$result?></div>
+            <div class="result result-animation" data-value="<?=$result?>"></div>
         <?php } ?>
         
         <div id="final"><h1 style="margin-top: 50px;"><span style="color:#8c6db6;">Nice try</span>, you got <span style="color:#8c6db6;"><?=$pts?></span> correct numbers!</h1></div>
