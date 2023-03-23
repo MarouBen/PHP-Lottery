@@ -45,12 +45,9 @@ function animateResult() {
   }, 100); 
 }
 animateResult();
-
+document.querySelector("#final").style.opacity = 1;
 function checkAllAnimated() {
   const numDivs = document.querySelectorAll('.result-animation');
   const final = document.querySelector("#final");
   const allClicked = Array.from(numDivs).every((div) => div.classList.contains('animated'));
-  if (allClicked) {
-      final.style.opacity = 1;
-  }
 }
